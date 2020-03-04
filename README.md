@@ -23,6 +23,8 @@ $ helm install kong/kong
 ```bash
 $ kubectl create secret generic POSTGRESQL_SECRET_NAME --from-literal postgresql-password=YourSecretPassword
 $ helm -n staging install kong -f ./values.yaml ../kong --set ingressController.installCRDs=false,image.tag=2.0,admin.enabled=true,admin.useTLS=false,admin.type=ClusterIP,env.database=postgres,postgresql.postgresqlUsername=kong,postgresql.postgresqlDatabase=kong,postgresql.service.host=POSTGRESQL_ADDRESS,postgresql.secretName=POSTGRESQL_SECRET_NAME,postgresql.external=true,postgresql.service.port=5432
+```
+
 ## Table of content
 
 - [Prerequisites](#prerequisites)
